@@ -18,6 +18,10 @@ public class ReadFile
             while (myReader.hasNextLine())
             {
                 String data = myReader.nextLine();
+                String[] arrAttend = data.split(","); // split ONLY on commas inside the string
+                // this will give array of strings
+                // you can't do "(int)String"m wont work; Integer.partInt(arrAttend[companyID])
+                // and then send this data to Attendee.java
                 System.out.println(data);
             }
         }
