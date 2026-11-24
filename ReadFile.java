@@ -8,7 +8,7 @@ import java.util.Scanner; // Import the Scanner class to read text files
 
 public class ReadFile {
     public static void main(String[] args) {
-        File myObj = new File("filename.txt");
+        File myObj = new File("names.csv");
 
         // try-with-resources: Scanner will be closed automatically
         try (Scanner myReader = new Scanner(myObj)) {
