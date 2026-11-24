@@ -2,31 +2,21 @@
 // 11/20/2026
 // Vibu Ramineni
 
-import java.io.File;                  // Import the File class
+import java.io.File; // Import the File class
 import java.io.FileNotFoundException; // Import this class to handle errors
-import java.util.Scanner;             // Import the Scanner class to read text files
+import java.util.Scanner; // Import the Scanner class to read text files
 
-public class ReadFile
-{
-    public static void main(String[] args)
-    {
+public class ReadFile {
+    public static void main(String[] args) {
         File myObj = new File("filename.txt");
 
         // try-with-resources: Scanner will be closed automatically
-        try (Scanner myReader = new Scanner(myObj))
-        {
-            while (myReader.hasNextLine())
-            {
+        try (Scanner myReader = new Scanner(myObj)) {
+            while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
-                String[] arrAttend = data.split(","); // split ONLY on commas inside the string
-                // this will give array of strings
-                // you can't do "(int)String"m wont work; Integer.partInt(arrAttend[companyID])
-                // and then send this data to Attendee.java
                 System.out.println(data);
             }
-        }
-        catch (FileNotFoundException e)
-        {
+        } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
